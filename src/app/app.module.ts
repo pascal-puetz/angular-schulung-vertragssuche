@@ -10,6 +10,7 @@ import {MatIconModule} from '@angular/material/icon';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
+import {HeaderComponent} from './components/header/header.component';
 import {SearchBarComponent} from './components/search-bar/search-bar.component';
 import {SuchePageComponent} from './suche-page/suche-page.component';
 
@@ -17,7 +18,8 @@ import {SuchePageComponent} from './suche-page/suche-page.component';
   declarations: [
     AppComponent,
     SuchePageComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
