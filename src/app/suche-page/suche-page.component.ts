@@ -6,5 +6,6 @@ import {Component} from '@angular/core';
   styleUrls: ['./suche-page.component.scss']
 })
 export class SuchePageComponent {
+  public sucheingabe:string = '';
 }
 

@@ -2,30 +2,4 @@
   <span>Vertragssuche</span>
 </mat-toolbar>
 
-
-<!--
-  Grid layout for responsive websites based on bootstrap 4.
-
-  Each row has max 12 columns and each column can take up any number of those 12. The combined value must not exceed 12.
-
-  The number of columns each column takes up can be defined for each screen size. Available screen sizes are:
-  xs (Xtra Small)
-  sm (small)
-  md (medium)
-  lg (large)
-  xl (Xtra large)
--->
-<div class="container">
-  <div class="row">
-    <div class="col-9 col-sm-11 col-md-11 col-lg-11">
-      <mat-form-field class="fullwidth">
-        <input  matInput placeholder="Suche" />
-      </mat-form-field>
-    </div>
-    <div class="col-1 flex">
-      <button mat-icon-button class="centered">
-        <mat-icon>search</mat-icon>
-      </button>
-    </div>
-  </div>
-</div>
+<gen-search-bar placeholder="Vertragsnummer" (search)="sucheingabe = $event"></gen-search-bar>
