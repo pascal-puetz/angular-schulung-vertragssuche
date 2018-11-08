@@ -27,8 +27,15 @@ export class VertraegeService {
     versicherungsnehmer: 'Hugo Mayer'
   }];
 
-  constructor() { }
+  public searchVertraege(search: string): Array<Vertrag> {
+    search = search.toLowerCase();
 
+    return this.vertraege.filter(vertrag =>
+      vertrag.versicherungsnehmer.toLowerCase().indexOf(search) > -1
+      || vertrag.bezeichnung.toLowerCase().indexOf(search) > -1
+      || `${vertrag.vertragsnummer}`.indexOf(search) > -1
+    );
+  }
 }
 
 export interface Vertrag {

@@ -1,10 +1,10 @@
 <gen-header title="Vertragssuche"></gen-header>
-<gen-search-bar placeholder="Vertragsnummer" (search)="sucheingabe = $event"></gen-search-bar>
+<gen-search-bar placeholder="Vertragsnummer" (search)="searchVertraege($event)"></gen-search-bar>
 
 
 <gen-table>
   <gen-table-line
-    *ngFor="let vertrag of vertraegeService.vertraege; let isEven=even"
+    *ngFor="let vertrag of vertraege; let isEven=even"
     [cols]="[vertrag.vertragsnummer, vertrag.bezeichnung, vertrag.versicherungsnehmer]"
     [even]="isEven"
   >
