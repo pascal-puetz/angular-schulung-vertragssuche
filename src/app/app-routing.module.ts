@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {SuchePageComponent} from './pages/suche-page.component';
+import {DetailsPageComponent} from './pages/details-page/details-page.component';
+import {SuchePageComponent} from './pages/suche-page/suche-page.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'vertragssuche',
     component: SuchePageComponent
+  },
+  {
+    path: 'details/:vnr',
+    component: DetailsPageComponent
   }
 ];
 

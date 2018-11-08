@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {VertraegeService, Vertrag} from '../services/vertraege.service';
+import {VertraegeService, Vertrag} from '../../services/vertraege.service';
 
 @Component({
   selector: 'gen-suche-page',
