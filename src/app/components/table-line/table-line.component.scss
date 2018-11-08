@@ -1,0 +1,12 @@
+.row-container {
+  display: flex;
+}
+.even {
+  background-color: rgb(255, 200, 200);
+}
+.odd {
+  background-color: rgb(255, 230, 230);
+}
+.col {
+  flex: 1;
+}

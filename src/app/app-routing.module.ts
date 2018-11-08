@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {SuchePageComponent} from './suche-page/suche-page.component';
+import {SuchePageComponent} from './pages/suche-page.component';
 
 const routes: Routes = [
   {

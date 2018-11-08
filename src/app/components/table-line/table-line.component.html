@@ -1,0 +1,6 @@
+<!-- This div will get the class "even" when the boolean flag "even" is true and get the class "odd" when even is false-->
+<div class="row-container" [class.even]="even" [class.odd]="!even">
+  <div class="col" *ngFor="let col of cols">
+    {{col}}
+  </div>
+</div>

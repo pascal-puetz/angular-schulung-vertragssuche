@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {VertraegeService} from '../services/vertraege.service';
 
 @Component({
   selector: 'gen-suche-page',
@@ -7,5 +8,9 @@ import {Component} from '@angular/core';
 })
 export class SuchePageComponent {
   public sucheingabe:string = '';
+
+  public constructor(
+    public vertraegeService:VertraegeService
+  ) {}
 }
 

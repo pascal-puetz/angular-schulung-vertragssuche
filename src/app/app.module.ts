@@ -12,14 +12,18 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './components/header/header.component';
 import {SearchBarComponent} from './components/search-bar/search-bar.component';
-import {SuchePageComponent} from './suche-page/suche-page.component';
+import {TableLineComponent} from './components/table-line/table-line.component';
+import {TableComponent} from './components/table/table.component';
+import {SuchePageComponent} from './pages/suche-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SuchePageComponent,
     SearchBarComponent,
-    HeaderComponent
+    HeaderComponent,
+    TableComponent,
+    TableLineComponent
   ],
   imports: [
     BrowserModule,
