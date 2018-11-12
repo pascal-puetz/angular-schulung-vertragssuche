@@ -1,5 +1,13 @@
 <gen-header title="Vertragssuche"></gen-header>
-<gen-search-bar placeholder="Vertragsnummer" (search)="searchVertraege($event)"></gen-search-bar>
+<form [formGroup]="form">
+  <gen-search-bar placeholder="Vertragsnummer" (search)="searchVertraege()" formControlName="search"></gen-search-bar>
+
+  <div class="container">
+    <div class="error-message col-12" *ngIf="!form.valid">
+      Die Sucheingabe darf nicht leer sein!
+    </div>
+  </div>
+</form>
 
 
 <gen-table>

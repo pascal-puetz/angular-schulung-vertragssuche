@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {VertraegeService, Vertrag} from '../../services/vertraege.service';
 
 @Component({
@@ -9,16 +10,23 @@ import {VertraegeService, Vertrag} from '../../services/vertraege.service';
 export class SuchePageComponent implements OnInit {
   public vertraege: Array<Vertrag> = [];
 
+  public form: FormGroup = this.fb.group({
+    search: ['', [Validators.required]]
+  });
+
   public constructor(
-    public vertraegeService:VertraegeService
+    public vertraegeService:VertraegeService,
+    private fb: FormBuilder
   ) {}
 
   public ngOnInit(): void {
     this.vertraege = this.vertraegeService.vertraege;
   }
 
-  public searchVertraege(search: string):void {
-    this.vertraege = this.vertraegeService.searchVertraege(search);
+  public searchVertraege():void {
+    if (this.form.valid) {
+      this.vertraege = this.vertraegeService.searchVertraege(this.form.get('search').value);
+    }
   }
 }
 

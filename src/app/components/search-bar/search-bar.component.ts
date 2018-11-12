@@ -1,11 +1,19 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, forwardRef, Input, Output} from '@angular/core';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 @Component({
   selector: 'gen-search-bar',
   templateUrl: './search-bar.component.html',
-  styleUrls: ['./search-bar.component.scss']
+  styleUrls: ['./search-bar.component.scss'],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => SearchBarComponent),
+      multi: true
+    }
+  ]
 })
-export class SearchBarComponent {
+export class SearchBarComponent implements ControlValueAccessor {
   /**
    * Input for customizing the placeholder shown.
    * @type {string}
@@ -32,4 +40,23 @@ export class SearchBarComponent {
    * @type {EventEmitter<string>}
    */
   @Output() public search: EventEmitter<string> = new EventEmitter<string>();
+
+  private onValueChanged: (value:string) => void;
+
+  public changeValue(value: string): void {
+    this.value = value;
+    if (this.onValueChanged) {
+      this.onValueChanged(value);
+    }
+  }
+
+  public writeValue(value: string): void {
+    this.value = value;
+  }
+
+  public registerOnChange(onValueChanged: (value:string) => void): void {
+    this.onValueChanged = onValueChanged;
+  }
+
+  public registerOnTouched(fn: () => void): void {}
 }
