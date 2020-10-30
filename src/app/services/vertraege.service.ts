@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import {Observable} from 'rxjs';
+import {VertragControllerService} from '../api/services';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +28,16 @@ export class VertraegeService {
     bezeichnung: 'Haftpflicht',
     versicherungsnehmer: 'Hugo Mayer'
   }];
+
+  constructor(
+    private vertraegeApi:VertragControllerService
+  ) {
+  }
+
+  public getVertraege():Observable<Array<Vertrag>> {
+    // tslint:disable-next-line:no-any
+    return this.vertraegeApi.getVertraegeUsingGET() as any;
+  }
 
   public searchVertraege(search: string): Array<Vertrag> {
     search = search.toLowerCase();

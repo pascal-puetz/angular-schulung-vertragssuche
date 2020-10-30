@@ -20,7 +20,12 @@ export class SuchePageComponent implements OnInit {
   ) {}
 
   public ngOnInit(): void {
-    this.vertraege = this.vertraegeService.vertraege;
+    this.vertraegeService.getVertraege().subscribe(
+      vertraege => this.vertraege = vertraege,
+      error => {
+        console.error('Oops, something went wrong!', error);
+      },
+    );
   }
 
   public searchVertraege():void {

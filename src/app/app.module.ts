@@ -16,6 +16,8 @@ import {TableLineComponent} from './components/table-line/table-line.component';
 import {TableComponent} from './components/table/table.component';
 import {DetailsPageComponent} from './pages/details-page/details-page.component';
 import {SuchePageComponent} from './pages/suche-page/suche-page.component';
+import {ApiModule} from './api/api.module';
+import {environment} from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,10 @@ import {SuchePageComponent} from './pages/suche-page/suche-page.component';
     MatInputModule,
     MatButtonModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+
+    ApiModule.forRoot({rootUrl: environment.rootUrls.vertraege }),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
